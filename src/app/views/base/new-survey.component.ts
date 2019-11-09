@@ -1,26 +1,65 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SurveyService } from '../../../services/survey.service';
 
 @Component({
   templateUrl: 'new-survey.component.html'
 })
-export class NewSurveyComponent {
+export class NewSurveyComponent implements OnInit{
 
-  constructor() { }
+  @Input() newSurveyForm: FormGroup;
+  submitted = false;
 
-  isCollapsed: boolean = false;
-  iconCollapse: string = 'icon-arrow-up';
+  constructor(private fb: FormBuilder,
+              private surveyService: SurveyService,
+              private router: Router) { }
 
-  collapsed(event: any): void {
-    // console.log(event);
+  ngOnInit() {
+    this.newSurveyForm = this.fb.group({
+      'name': ['', Validators.required],
+      'description': ['', Validators.required],
+      'question0': [''],
+      'question1': [''],
+      'question2': [''],
+      'question3': [''],
+      'question4': [''],
+      'question5': [''],
+    });
   }
 
-  expanded(event: any): void {
-    // console.log(event);
+  get f() { return this.newSurveyForm.controls; }
+
+  onSubmit() {
+    this.submitted = true;
+    if (this.newSurveyForm.invalid) { alert('Please fill the form correctly')};
+
+    const survey = {
+      name: this.newSurveyForm.value.name,
+      description: this.newSurveyForm.value.description,
+      company_code: this.newSurveyForm.value.company_code,
+      question0: this.newSurveyForm.value.question0,
+      question1: this.newSurveyForm.value.question1,
+      question2: this.newSurveyForm.value.question2,
+      question3: this.newSurveyForm.value.question3,
+      question4: this.newSurveyForm.value.question4,
+      question5: this.newSurveyForm.value.question5
+    }
+
+    this.surveyService.createSurvey(survey).subscribe((response) => {
+      alert('Survey was created successfully ' +
+       response['public_id'] + 
+       response['name'] + 
+       response['description']);
+      this.router.navigate(['/base/home']);
+    })
+
+    console.log(survey);
   }
 
-  toggleCollapse(): void {
-    this.isCollapsed = !this.isCollapsed;
-    this.iconCollapse = this.isCollapsed ? 'icon-arrow-down' : 'icon-arrow-up';
+  onReset() {
+    this.submitted = false;
+    this.newSurveyForm.reset();
   }
 
 }

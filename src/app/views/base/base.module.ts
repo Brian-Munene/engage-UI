@@ -1,6 +1,6 @@
 // Angular
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { HomeComponent } from './home.component';
@@ -49,6 +49,7 @@ import { NewSurveyComponent} from './new-survey.component';
 // Components Routing
 import { BaseRoutingModule } from './base-routing.module';
 import { RegisterCompanyComponent } from './register-company.component';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -62,7 +63,9 @@ import { RegisterCompanyComponent } from './register-company.component';
     PaginationModule.forRoot(),
     PopoverModule.forRoot(),
     ProgressbarModule.forRoot(),
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   declarations: [
     HomeComponent,
@@ -78,6 +81,9 @@ import { RegisterCompanyComponent } from './register-company.component';
     TooltipsComponent,
     NewSurveyComponent,
     RegisterCompanyComponent
+  ],
+  providers: [
+    HttpClient
   ]
 })
 export class BaseModule { }

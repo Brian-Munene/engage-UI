@@ -1,29 +1,53 @@
-<div class="animated fadeIn">
-  <div class="card">
-    <div class="card-header">
-      <strong> New Survey</strong>
-    </div>
-    <div class="card-body">
-      <div class="form-group">
-        <label for="company">Company</label>
-        <input type="text" class="form-control" id="company" placeholder="Enter your company name">
-      </div>
-      <div class="form-group">
-        <label for="vat">VAT</label>
-        <input type="text" class="form-control" id="vat" placeholder="PL1234567890">
-      </div>
-      <div class="form-group">
-        <label for="street">Street</label>
-        <input type="text" class="form-control" id="street" placeholder="Enter street name">
-      </div>
-      <div class="form-group">
-        <label for="country">Country</label>
-        <input type="text" class="form-control" id="country" placeholder="Country name">
-      </div>
-    </div>
-    <div class="card-footer">
-      <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-      <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
-    </div>
-  </div>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card mx-4">
+                        <div class="card-body p-4">
+                            <form [formGroup]="newSurveyForm" (ngSubmit)="onSubmit()">
+                                <strong>New Survey</strong>
+                                <div class="form-group">
+                                    <label for="company">Name</label>
+                                    <input type="text" formControlName="name" class="form-control" id="company">
+                                </div>
+                                <div class="form-group">
+                                    <label for="vat">Description</label>
+                                    <input type="text" formControlName="description" class="form-control" id="description">
+                                </div>
+                                <div class="form-group">
+                                    <label for="street">First Question</label>
+                                    <input type="text" formControlName="question0" class="form-control" id="question1">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Second Question</label>
+                                    <input type="text" formControlName="question1" class="form-control" id="question2">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Third Question</label>
+                                    <input type="text" formControlName="question2" class="form-control" id="question3">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Fourth Question</label>
+                                    <input type="text" formControlName="question3" class="form-control" id="question4">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Fifth Question</label>
+                                    <input type="text" formControlName="question4" class="form-control" id="question5">
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Final Question</label>
+                                    <input type="text" formControlName="question5" class="form-control" id="question5">
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-sm btn-primary" [disabled]="!newSurveyForm.valid"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                                    <button type="reset" class="btn btn-sm btn-danger" (click)="onReset()"><i class="fa fa-ban"></i> Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </div>

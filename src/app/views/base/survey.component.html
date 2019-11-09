@@ -1,29 +1,50 @@
-<div class="animated fadeIn">
-      <div class="card">
-        <div class="card-header">
-          <strong>Survey</strong>
+<div class="app-body">
+    <main class="main d-flex align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card mx-4">
+                        <div class="card-body p-4">
+                            <form [formGroup]="surveyResponseForm" (ngSubmit)="onSubmit()">
+                                <div class="card-header">
+                                    <strong>{{formDetails.name}}</strong>
+                                </div>
+                                <div class="card-body">
+                                    <p>{{formDetails.description}}</p>
+                                    <div class="form-group">
+                                        <label for="company">{{formDetails.q0}}</label>
+                                        <input type="text" formControlName="q0" class="form-control" id="q0" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="vat">{{formDetails.q1}}</label>
+                                        <input type="text" formControlName="q1" class="form-control" id="q1" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="street">{{formDetails.q2}}</label>
+                                        <input type="text" formControlName="q2" class="form-control" id="q2" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country">{{formDetails.q3}}</label>
+                                        <input type="text" formControlName="q3" class="form-control" id="q3" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country">{{formDetails.q4}}</label>
+                                        <input type="text" formControlName="q4" class="form-control" id="q4" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="country">{{formDetails.q5}}</label>
+                                        <input type="text" formControlName="q5" class="form-control" id="q5" placeholder="">
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
+                                    <button type="reset" class="btn btn-sm btn-danger" (click)="onReset()"><i class="fa fa-ban"></i> Reset</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-          <div class="form-group">
-            <label for="company">Company</label>
-            <input type="text" class="form-control" id="company" placeholder="Enter your company name">
-          </div>
-          <div class="form-group">
-            <label for="vat">VAT</label>
-            <input type="text" class="form-control" id="vat" placeholder="PL1234567890">
-          </div>
-          <div class="form-group">
-            <label for="street">Street</label>
-            <input type="text" class="form-control" id="street" placeholder="Enter street name">
-          </div>
-          <div class="form-group">
-            <label for="country">Country</label>
-            <input type="text" class="form-control" id="country" placeholder="Country name">
-          </div>
-        </div>
-        <div class="card-footer">
-          <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Submit</button>
-          <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Reset</button>
-        </div>
-      </div>
+    </main>
 </div>
