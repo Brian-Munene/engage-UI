@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { LocationStrategy, HashLocationStrategy, CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
@@ -46,6 +46,7 @@ import {HttpClient, HttpHandler, HttpClientModule} from '@angular/common/http';
 @NgModule({
   imports: [
     BrowserModule,
+    CommonModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     AppAsideModule,
@@ -59,7 +60,7 @@ import {HttpClient, HttpHandler, HttpClientModule} from '@angular/common/http';
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
