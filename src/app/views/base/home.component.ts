@@ -10,19 +10,18 @@ import { Router } from '@angular/router';
 export class HomeComponent implements OnInit {
  
   surveys = [];
-  // survey;
   public_id: string;
 
   @Output() messageEvent = new EventEmitter<string>();
 
-  constructor(private surveyService: SurveyService, private router:Router) { }
+  constructor(private surveyService: SurveyService, 
+              private router:Router) { }
 
   ngOnInit() {
     this.getSurveys()
   }
   getSurveys() {
     return this.surveyService.getSurveys().subscribe((data: any[])=>{
-      //console.log(data);
       this.surveys = data;
     });
   }

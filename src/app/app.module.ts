@@ -43,6 +43,7 @@ import { ChartsModule } from 'ng2-charts';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RegisterService} from '../services/register.service';
 import {HttpClient, HttpHandler, HttpClientModule} from '@angular/common/http';
+import { SurveyResponseDetailsComponent } from './views/survey-response-details/survey-response-details.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -68,7 +69,8 @@ import {HttpClient, HttpHandler, HttpClientModule} from '@angular/common/http';
     P404Component,
     P500Component,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SurveyResponseDetailsComponent
   ],
   providers: [{
     provide: LocationStrategy,

@@ -21,4 +21,14 @@ export class SurveyResponseServiceService {
       })
     });
   }
+
+  getSingleResponse(public_id){
+    return this.httpClient.get(this.baseURl + `/view_single_survey_responses/${public_id}`, {
+      headers:new HttpHeaders({
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${localStorage.getItem('access_token')}`
+      })
+    })
+  }
+
 }

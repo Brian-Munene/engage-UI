@@ -9,6 +9,7 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
+
 @NgModule({
   imports: [
     FormsModule,
@@ -18,6 +19,8 @@ import { CommonModule } from '@angular/common';
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
-  declarations: [ DashboardComponent ]
+  declarations: [ 
+    DashboardComponent 
+  ]
 })
 export class DashboardModule { }

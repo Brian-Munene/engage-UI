@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SurveyResponseServiceService } from '../../../services/survey-response-service.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -13,7 +14,8 @@ export class DashboardComponent implements OnInit {
   survey_count = 0;
   users_count = 0;
   surveys = [];
-  constructor(private surveyResPonseService: SurveyResponseServiceService){}
+  constructor(private surveyResPonseService: SurveyResponseServiceService,
+              private router: Router){}
 
   async ngOnInit() {
     return this.surveyResPonseService.getResponses().subscribe((data:any)=>{
@@ -28,4 +30,9 @@ export class DashboardComponent implements OnInit {
 
     })
     }
+  
+  sendMessage(survey){
+    // console.log(survey);
+    this.router.navigateByUrl('/survey-response-details', {state: {data:survey.public_id}});
+  }
   }
