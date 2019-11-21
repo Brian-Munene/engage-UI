@@ -42,8 +42,9 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RegisterService} from '../services/register.service';
-import {HttpClient, HttpHandler, HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpHandler, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { SurveyResponseDetailsComponent } from './views/survey-response-details/survey-response-details.component';
+import { HttpErrorInterceptor } from './views/error/http-error.interceptor';
 @NgModule({
   imports: [
     BrowserModule,
@@ -78,7 +79,11 @@ import { SurveyResponseDetailsComponent } from './views/survey-response-details/
   },
     RegisterService,
     HttpClient,
-    
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [ AppComponent ]
 })
