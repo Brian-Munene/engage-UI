@@ -53,10 +53,9 @@ export class SurveyComponent implements OnInit {
       response5: this.surveyResponseForm.value.q5,
     }
     this.surveyService.surveyResponse(surveyResponse, this.formDetails.public_id).subscribe((response) => {
-      alert('Your response has been save successfully' +
-       response['public_id']);
+      window.alert('Your response has been save successfully');
       this.router.navigate(['/base/home']);
-    })
+    });
     //console.log(surveyResponse);
   }
 

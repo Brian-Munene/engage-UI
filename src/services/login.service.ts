@@ -16,11 +16,43 @@ export class LoginService {
     private httpCLientModule: HttpClientModule, private handler: HttpHandler) { }
 
     loginUser(obj): Observable<any> {
-      console.log(this.baseURL);
       return this.httpClient.post(this.baseURL + '/login', obj, {
         headers: new HttpHeaders({
           'Content-Type': 'application/json',
         })
       });
     } 
+
+    getUser(){
+      return this.httpClient.get(this.baseURL + '/single_user',{
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`
+        })
+      });
+    }
+    
+    logout(){
+      return this.httpClient.post(this.baseURL + '/logout', {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+        })
+      });
+    }
+    companies(){
+      return this.httpClient.get(this.baseURL + '/companies', {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`
+        })
+      });
+    }
+    joinCompany(obj): Observable<any> {
+      return this.httpClient.post(this.baseURL + '/join_company', obj, {
+        headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('access_token')}`
+        })
+      });
+    }
 }

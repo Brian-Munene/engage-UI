@@ -27,9 +27,7 @@ export class HomeComponent implements OnInit {
   }
 
   sendMessage(survey) {
-    //console.log(survey)
     this.router.navigateByUrl('/base/survey', {state: {surv:survey.public_id}});
-    //this.public_id = survey.public_id;
   }
 
 }

@@ -37,13 +37,13 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
 
-    if ( this.registerForm.invalid) { alert('Please fill the form correctly') }
+    if ( this.registerForm.invalid) { window.alert('Please fill the form correctly') }
     
     this.registerService.registerUser(this.registerForm.value).subscribe((response) => {
       let key = 'access_token';
       let value = response['access_token']
       localStorage.setItem(key, value);
-      alert('Registration was successful');
+      window.alert('Registration was successful');
       this.router.navigate(['/login']);
     });
 

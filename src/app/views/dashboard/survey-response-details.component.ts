@@ -4,7 +4,7 @@ import { Router, NavigationStart } from '@angular/router';
 import { SurveyResponseServiceService } from '../../../services/survey-response-service.service';
 
 @Component({
-  templateUrl: './survey-response-details.component.html'
+  templateUrl: 'survey-response-details.component.html'
 })
 export class SurveyResponseDetailsComponent implements OnInit {
 

@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { SurveyResponseDetailsComponent } from './survey-response-details.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
     ButtonsModule.forRoot()
   ],
   declarations: [ 
-    DashboardComponent 
+    DashboardComponent,
+    SurveyResponseDetailsComponent
   ]
 })
 export class DashboardModule { }

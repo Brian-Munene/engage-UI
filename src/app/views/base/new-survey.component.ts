@@ -47,10 +47,7 @@ export class NewSurveyComponent implements OnInit{
     }
 
     this.surveyService.createSurvey(survey).subscribe((response) => {
-      alert('Survey was created successfully ' +
-       response['public_id'] + 
-       response['name'] + 
-       response['description']);
+      alert(response['name'] + ' was created successfully ');
       this.router.navigate(['/base/home']);
     })
 

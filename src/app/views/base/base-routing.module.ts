@@ -14,6 +14,8 @@ import {ProgressComponent} from './progress.component';
 import {TooltipsComponent} from './tooltips.component';
 import { NewSurveyComponent} from './new-survey.component';
 import { RegisterCompanyComponent } from './register-company.component';
+import { ProfileComponent } from './profile.component';
+import { JoinCompanyComponent } from './join-company.component';
 
 const routes: Routes = [
   {
@@ -52,6 +54,20 @@ const routes: Routes = [
         component: NewSurveyComponent,
         data: {
           title: 'New Survey'
+        }
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent,
+        data: {
+          title: 'Profile'
+        }
+      },
+      {
+        path: 'join-company',
+        component: JoinCompanyComponent,
+        data: {
+          title: 'Join Company'
         }
       },
       {

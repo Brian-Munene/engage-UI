@@ -8,7 +8,7 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-import { SurveyResponseDetailsComponent } from './views/survey-response-details/survey-response-details.component';
+import { SurveyResponseDetailsComponent } from './views/dashboard/survey-response-details.component';
 
 export const routes: Routes = [
   {

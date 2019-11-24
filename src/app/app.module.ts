@@ -43,8 +43,10 @@ import { ChartsModule } from 'ng2-charts';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RegisterService} from '../services/register.service';
 import {HttpClient, HttpHandler, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { SurveyResponseDetailsComponent } from './views/survey-response-details/survey-response-details.component';
 import { HttpErrorInterceptor } from './views/error/http-error.interceptor';
+import { DashboardModule } from './views/dashboard/dashboard.module';
+import { NotificationsModule } from './views/notifications/notifications.module';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -62,7 +64,9 @@ import { HttpErrorInterceptor } from './views/error/http-error.interceptor';
     ChartsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    DashboardModule,
+    NotificationsModule
   ],
   declarations: [
     AppComponent,
@@ -71,7 +75,7 @@ import { HttpErrorInterceptor } from './views/error/http-error.interceptor';
     P500Component,
     LoginComponent,
     RegisterComponent,
-    SurveyResponseDetailsComponent
+    
   ],
   providers: [{
     provide: LocationStrategy,

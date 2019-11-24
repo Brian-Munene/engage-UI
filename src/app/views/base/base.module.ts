@@ -50,6 +50,8 @@ import { NewSurveyComponent} from './new-survey.component';
 import { BaseRoutingModule } from './base-routing.module';
 import { RegisterCompanyComponent } from './register-company.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { ProfileComponent } from './profile.component';
+import { JoinCompanyComponent } from './join-company.component';
 
 @NgModule({
   imports: [
@@ -80,7 +82,9 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     ProgressComponent,
     TooltipsComponent,
     NewSurveyComponent,
-    RegisterCompanyComponent
+    RegisterCompanyComponent,
+    ProfileComponent,
+    JoinCompanyComponent
   ],
   providers: [
     HttpClient
