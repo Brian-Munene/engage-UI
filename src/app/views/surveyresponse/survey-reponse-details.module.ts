@@ -13,14 +13,14 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [
     FormsModule,
-    //SurveyResponseRoutingModule,
+    SurveyResponseRoutingModule,
     ChartsModule,
     CommonModule,
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
   declarations: [ 
-   // SurveyResponseDetailsComponent,
+   SurveyResponseDetailsComponent,
      
   ]
 })
