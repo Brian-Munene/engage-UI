@@ -4,25 +4,24 @@ import { ChartsModule } from 'ng2-charts';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
-import { DashboardComponent } from './dashboard.component';
-import { DashboardRoutingModule } from './dashboard-routing.module';
+import { SurveyResponseDetailsComponent } from './survey-response-details.component';
+import { SurveyResponseRoutingModule } from './survey-reponse-details-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
-import { SurveyResponseDetailsComponent } from '../surveyresponse/survey-response-details.component';
-
+ 
 
 @NgModule({
   imports: [
     FormsModule,
-    DashboardRoutingModule,
+    //SurveyResponseRoutingModule,
     ChartsModule,
     CommonModule,
     BsDropdownModule,
     ButtonsModule.forRoot()
   ],
   declarations: [ 
-    DashboardComponent,
-   // SurveyResponseDetailsComponent
+   // SurveyResponseDetailsComponent,
+     
   ]
 })
-export class DashboardModule { }
+export class SurveyResponseDetailsModule { }

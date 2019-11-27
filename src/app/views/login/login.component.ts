@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
       let key = 'access_token';
       let value = response['access_token']
       localStorage.setItem(key, value);
-      window.alert('Login was Successful' + response.message);
+      window.alert(response.message);
       this.router.navigate(['/base/home']);
     })
 

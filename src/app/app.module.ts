@@ -45,6 +45,7 @@ import {RegisterService} from '../services/register.service';
 import {HttpClient, HttpHandler, HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { HttpErrorInterceptor } from './views/error/http-error.interceptor';
 import { DashboardModule } from './views/dashboard/dashboard.module';
+import { SurveyResponseDetailsModule } from './views/surveyresponse/survey-reponse-details.module';
 import { NotificationsModule } from './views/notifications/notifications.module';
 
 @NgModule({
@@ -66,6 +67,7 @@ import { NotificationsModule } from './views/notifications/notifications.module'
     ReactiveFormsModule,
     HttpClientModule,
     DashboardModule,
+    SurveyResponseDetailsModule,
     NotificationsModule
   ],
   declarations: [

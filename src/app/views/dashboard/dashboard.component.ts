@@ -7,6 +7,8 @@ import { Router } from '@angular/router';
   templateUrl: 'dashboard.component.html'
 })
 export class DashboardComponent implements OnInit {
+
+   
   happiness = 0;
   hate = 0;
   sadness = 0;
@@ -16,7 +18,7 @@ export class DashboardComponent implements OnInit {
   surveys = [];
   constructor(private surveyResPonseService: SurveyResponseServiceService,
               private router: Router){}
-
+               
   async ngOnInit() {
     return this.surveyResPonseService.getResponses().subscribe((data:any)=>{
       // console.log(data)
@@ -32,7 +34,7 @@ export class DashboardComponent implements OnInit {
     }
   
   sendMessage(survey){
-    // console.log(survey);
-    this.router.navigateByUrl('/survey-response-details', {state: {data:survey.public_id}});
+    
+  this.router.navigateByUrl('survey-response-details', {state: {data:survey.public_id}});
   }
   }

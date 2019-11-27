@@ -92,7 +92,7 @@
                         <tbody>
                             <tr *ngFor="let survey of surveys">
                                 <td class="text-center">
-                                    <div><button type="button" class="btn btn-block btn-primary" routerLink="dashboard/survey-response-details" (click)="sendMessage(survey) ">Details</button></div>
+                                    <div><button type="button" class="btn btn-block btn-primary" (click)="sendMessage(survey) ">Details</button></div>
                                     <td class="text-center">
                                         <div>{{survey.survey}}</div>
                                         <div class="small text-muted">

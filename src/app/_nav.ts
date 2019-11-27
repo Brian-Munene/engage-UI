@@ -58,6 +58,7 @@ export const navItems: NavData[] = [
     url: '/register',
     icon: 'icon-star'
   },
+   
   {
     name: 'Register Company',
     url: '/base/register-company',

@@ -8,7 +8,7 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
-import { SurveyResponseDetailsComponent } from './views/dashboard/survey-response-details.component';
+import { SurveyResponseDetailsComponent } from './views/surveyresponse/survey-response-details.component';
 
 export const routes: Routes = [
   {
@@ -73,6 +73,10 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: 'survey-resoonse-details',
+        loadChildren: () => import('./views/surveyresponse/survey-reponse-details-routing.module').then(m => m.SurveyResponseRoutingModule)
       },
       {
         path: 'icons',
