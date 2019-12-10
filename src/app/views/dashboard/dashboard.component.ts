@@ -21,7 +21,6 @@ export class DashboardComponent implements OnInit {
                
   async ngOnInit() {
     return this.surveyResPonseService.getResponses().subscribe((data:any)=>{
-      // console.log(data)
       this.happiness = data.happiness;
       this.hate = data.hate;
       this.sadness = data.sadness;

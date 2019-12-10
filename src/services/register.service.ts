@@ -14,16 +14,16 @@ export class RegisterService {
     private httpCLientModule: HttpClientModule, private handler: HttpHandler) { }
 
   registerUser(obj) {
-    // return this.httpClient.post(this.baseURL, obj, {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json',
-    //   })
-    // }).pipe(map(data => data));
     console.log(this.baseURL);
     return this.httpClient.post(this.baseURL + '/register', obj, {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
       })
+    });
+  }
+  companies(){
+    return this.httpClient.get(this.baseURL + '/companies', {
+      
     });
   }
 }

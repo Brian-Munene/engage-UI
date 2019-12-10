@@ -14,6 +14,12 @@ export class RegisterComponent implements OnInit {
   @Input() registerForm: FormGroup;
 
   submitted = false;
+  companies = [];
+  roles = [
+    "manager",                                              
+    "admin",
+    "employee"
+  ]
 
   constructor(private fb: FormBuilder,
               private registerService: RegisterService,
@@ -23,13 +29,18 @@ export class RegisterComponent implements OnInit {
     this.registerForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      role: ['', Validators.required],
       company_code: [''],
       password: ['', [Validators.required, Validators.minLength(6)]],
       repeat_password: ['', Validators.required]
     }, {
       validators: MustMatch('password', 'repeat_password')
     });
-
+    return this.registerService.companies().subscribe((data: any)=>{
+      // console.log(data);
+      this.companies = data;
+      console.log(this.companies);
+  });
   }
 
   get f() { return this.registerForm.controls; }

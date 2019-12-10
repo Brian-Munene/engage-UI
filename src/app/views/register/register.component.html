@@ -29,10 +29,19 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
-
-                                        <span class="input-group-text">*</span>
+                                        <span class="input-group-text"><i class="icon-star"> Company</i></span>
                                     </div>
-                                    <input type="text" formControlName="company_code" class="form-control" placeholder="Company Code" autocomplete="company-code">
+                                    <select class="form-control" formControlName="company_code" placeholder="Company" autocomplete="company">
+                                         <option *ngFor="let company of companies;" [value]="company.code"> {{company.name}} </option>                                              
+                                    </select>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="icon-star"> Role</i></span>
+                                    </div>
+                                    <select class="form-control" formControlName="role" placeholder="Role" autocomplete="role" required>
+                                            <option *ngFor="let role of roles;" [value]="role"> {{role}} </option>                                              
+                                    </select>
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
@@ -54,7 +63,7 @@
                                         <div *ngIf="submitted && f.repeat_password.errors.mustMatch">Passwords must match</div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-success" [disabled]="!registerForm.valid">Register</button>
+                                <button type="submit" class="btn btn-success">Register</button>
                                 <button class="btn btn-danger" type="reset" (click)="onReset()">Reset</button>
                                 <p>
                                     Form Status: {{ registerForm.status }}

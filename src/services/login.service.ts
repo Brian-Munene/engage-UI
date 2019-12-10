@@ -41,10 +41,7 @@ export class LoginService {
     }
     companies(){
       return this.httpClient.get(this.baseURL + '/companies', {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${localStorage.getItem('access_token')}`
-        })
+       
       });
     }
     joinCompany(obj): Observable<any> {

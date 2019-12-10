@@ -38,12 +38,7 @@ export class RegisterCompanyComponent implements OnInit {
   
 
     this.registerCompanyService.registerCompany(company).subscribe((response) => {
-      alert('Registration of '+
-       response['public_id'] + 
-       response['name'] + 
-       response['head'] + 
-       response['size'] + 
-       response['code'] + 'was successful');
+      alert('Registration of '+ response['name'] +  ' was successful');
       this.router.navigate(['/base/home']);
     })
 

@@ -38,7 +38,7 @@ export class HttpErrorInterceptor implements HttpInterceptor {
                             this.router.navigateByUrl('/base/home');
                             break;
                         case 400:
-                            errorMessage = 'Please fill in the fields correctly';
+                            errorMessage = error.message;
                             break;
                         case 404:
                             errorMessage = 'Resource is not available';
