@@ -21,7 +21,7 @@ export class SurveyResponseDetailsComponent implements OnInit {
 
   constructor(private router: Router, 
               private surveyResponseService: SurveyResponseServiceService) { 
-    this.survey = this.router.getCurrentNavigation().extras.state
+    this.survey = this.router.getCurrentNavigation()!.extras.state
     console.log(this.survey.data)
    
   }
