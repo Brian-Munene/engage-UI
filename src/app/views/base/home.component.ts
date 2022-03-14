@@ -21,12 +21,12 @@ export class HomeComponent implements OnInit {
     this.getSurveys()
   }
   getSurveys() {
-    return this.surveyService.getSurveys().subscribe((data: any[])=>{
+    return this.surveyService.getSurveys().subscribe((data: any)=>{
       this.surveys = data;
     });
   }
 
-  sendMessage(survey) {
+  sendMessage(survey:any) {
     this.router.navigateByUrl('/base/survey', {state: {surv:survey.public_id}});
   }
 

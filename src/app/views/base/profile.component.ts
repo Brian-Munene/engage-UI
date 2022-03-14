@@ -7,13 +7,13 @@ import { LoginService } from '../../../services/login.service';
 })
 export class ProfileComponent implements OnInit {
  
-  user;
+  user: any;
 
   constructor(private loginService: LoginService, 
               private router:Router) { }
 
   ngOnInit() {
-      return this.loginService.getUser().subscribe((data: any[])=>{
+      return this.loginService.getUser().subscribe((data: any)=>{
         //   console.log(data)
           this.user = data;
       })

@@ -21,7 +21,7 @@ export class SurveyComponent implements OnInit {
   constructor(private surveyService: SurveyService, 
               private router:Router,
               private fb: FormBuilder) {
-    this.survey = this.router.getCurrentNavigation().extras.state
+    this.survey = this.router.getCurrentNavigation()!.extras.state
     // console.log(this.survey.surv)
    }
 
@@ -34,7 +34,7 @@ export class SurveyComponent implements OnInit {
       'q4': [''],
       'q5': ['']
     });
-    return this.surveyService.singleSurvey(this.survey.surv).subscribe((data: any[])=>{
+    return this.surveyService.singleSurvey(this.survey.surv).subscribe((data: any)=>{
       // console.log(data);
       this.formDetails = data;
       // console.log(this.formDetails);

@@ -7,7 +7,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class TooltipsComponent {
 
   constructor(sanitizer: DomSanitizer) {
-    this.html = sanitizer.sanitize(SecurityContext.HTML, this.html);
+    this.html = sanitizer.sanitize(SecurityContext.HTML, this.html) || ''
   }
 
   content: string = 'Vivamus sagittis lacus vel augue laoreet rutrum faucibus.';

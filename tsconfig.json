@@ -1,6 +1,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "suppressImplicitAnyIndexErrors": true,
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
